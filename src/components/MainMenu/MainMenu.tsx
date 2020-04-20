@@ -140,6 +140,13 @@ const MainMenu: React.FC = () => {
                                   Payment options
                                 </Link>
                               </li>
+                              {user.isStaff && appPaths.dashboardAppUrl && (
+                                <li data-testid="dashboard__link">
+                                  <a href={appPaths.dashboardAppUrl}>
+                                    Dashboard
+                                  </a>
+                                </li>
+                              )}
                               <li
                                 onClick={handleSignOut}
                                 data-testid="logout-link"

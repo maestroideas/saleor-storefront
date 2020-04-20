@@ -1,10 +1,15 @@
+import { dashboardAppUrl } from "@temp/app/routes";
 import React from "react";
 import { Link } from "react-router-dom";
 
 import * as S from "./styles";
 import { IProps } from "./types";
 
-export const AccountMenu: React.FC<IProps> = ({ links, active }: IProps) => {
+export const AccountMenu: React.FC<IProps> = ({
+  links,
+  active,
+  isStaff,
+}: IProps) => {
   return (
     <S.Wrapper>
       <S.MenuHeader>MY ACCOUNT</S.MenuHeader>
@@ -21,6 +26,11 @@ export const AccountMenu: React.FC<IProps> = ({ links, active }: IProps) => {
           </Link>
         );
       })}
+      {isStaff && dashboardAppUrl && (
+        <S.MenuItem active={false}>
+          <a href={dashboardAppUrl}>Dashboard</a>
+        </S.MenuItem>
+      )}
     </S.Wrapper>
   );
 };

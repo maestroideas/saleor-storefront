@@ -63,7 +63,7 @@ const Account: React.FC<RouteComponentProps> = ({ history, match }) => {
       <div className="account">
         <Media minWidth={smallScreen}>
           <div className="account__menu">
-            <AccountMenu links={links} active={match.path} />
+            <AccountMenu links={links} active={match.path} isStaff={user.isStaff} />
           </div>
         </Media>
         <Media maxWidth={smallScreen - 1}>

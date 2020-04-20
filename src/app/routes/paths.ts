@@ -1,3 +1,5 @@
+import { dashboardUrl } from "@temp/constants";
+
 const slugUrl = ":slug([a-z-0-9]+)/:id([0-9]+)/";
 export const baseUrl = "/";
 export const searchUrl = `${baseUrl}search/`;
@@ -15,3 +17,5 @@ export const orderHistoryUrl = `${baseUrl}order-history/`;
 export const addressBookUrl = `${baseUrl}address-book/`;
 export const paymentOptionsUrl = `${baseUrl}payment-options/`;
 export const passwordResetUrl = `${baseUrl}reset-password/`;
+export const dashboardAppUrl =
+  dashboardUrl === "true" ? `${baseUrl}dashboard/` : dashboardUrl;
